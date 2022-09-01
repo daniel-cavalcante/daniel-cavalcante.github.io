@@ -1,0 +1,63 @@
+html {
+  font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high  */
+  font-family: 'Roboto Condensed', sans-serif; /* this should be the rest of the output you got from Google fonts */
+  background-color: #c5f5f0;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #f3fdfc;
+  padding: 0 20px 20px 20px;
+  border: 5px solid rgb(255, 255, 255);
+}
+
+h1 {
+  font-size: 60px;
+  font-family: 'DynaPuff', cursive;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  color: black;
+  text-shadow: 3px 3px 3px #c5f5f0;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+h3 {
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+p, li {
+  font-size: 16px;
+  /* font-family: 'Roboto Condensed', sans-serif; */
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.banner {
+  border: 5px solid #ffffff;
+}
+
+.meme {
+  border: 2px solid #ffffff;
+}
+
+#contents_table {
+  border: 5px solid #c5f5f0;
+  margin: 40px;
+  padding: 20px 20px 20px 20px;
+  width: 50%;
+}
+
+
