@@ -1,10 +1,10 @@
 /* Color variables. */
 :root {
-  --c1: #A0AABB;
-  --c2: #143F59;
-  --c3: #0D0F0C;
-  --c4: #F2E2C4;
-  --c5: #A6633C;
+  --c1: rgb(160, 170, 187);
+  --c2: rgb(20, 63, 89);
+  --c3: rgb(13, 15, 12);
+  --c4: rgb(242, 226, 196);
+  --c5: rgb(166, 99, 60);
 }
 
 html {
@@ -20,9 +20,6 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
-
-/* Edit below this line. */
 
 
 
@@ -170,7 +167,7 @@ nav a {
   text-decoration: none;
   outline: none;
 
-  border: 1px #7b8391 solid;
+  border: 1px rgb(123, 131, 145) solid;
   /* border-radius: 5px; */
 
   text-align: center;
@@ -182,7 +179,7 @@ nav a {
     linear-gradient(135deg, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.5) 100%) center center / 400px 200px no-repeat var(--c1);
 
   box-shadow: 
-    1px 1px .2em black,
+    1px 1px .2em rgb(0, 0, 0),
     inset 2px 2px .1em rgba(255, 255, 255, 0.4), 
     inset -2px -2px .1em rgba(0, 0, 0, 0.7);
 }
