@@ -26,7 +26,7 @@ html {
 
 
 
-/* §§ Grid Layout */
+/* § Grid Layout */
 .container {
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -75,7 +75,7 @@ footer {
 } */
 
 
-/* §§ General Styling */
+/* § General Styling */
 body {
   width: 90%;
   max-width: 900px;
@@ -135,7 +135,7 @@ li {
 
 
 
-/* §§ Header and Navigation Menu */
+/* § Header and Navigation Menu */
 header {
   height: 15rem;
 
@@ -158,7 +158,7 @@ nav {
 
   margin-bottom: 1em;
   
-  border-bottom: 5px var(--c3) solid;
+  border-bottom: 2px var(--c3) double;
   
   text-align: center;
   font-size: 1.5em;
@@ -208,7 +208,7 @@ nav a:active {
 
 
 
-/* §§ Article and Contents */
+/* § Article and Contents */
 article {
   padding: 20px;
   border-right: 2px var(--c5) solid;
@@ -249,7 +249,7 @@ article {
 
 
 
-/* §§ Footer */
+/* § Footer */
 footer {
   border-top: 20px var(--c1) solid;
   border-bottom: 2px var(--c5) solid;
