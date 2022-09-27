@@ -25,5 +25,16 @@ for (i = 0; i < imgs.length; i++) {
 /* Wiring up the Darken/Lighten button */
 
 btn.addEventListener('click', () => {
+  const state = btn.getAttribute('class');
+  const overlay = document.querySelector('.overlay');
 
+  if (state === 'dark') {
+    btn.setAttribute('class','light');
+    btn.textContent = 'Lighten';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+  } else {
+    btn.setAttribute('class','dark');
+    btn.textContent = 'Darken';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+  }
 });
