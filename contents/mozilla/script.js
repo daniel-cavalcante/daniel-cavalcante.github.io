@@ -1,15 +1,24 @@
-document.addEventListener(
-  'DOMContentLoaded', () => {
-    function createParagraph() {
-      const para = document.createElement('p');
-      para.textContent = 'You clicked the button!';
-      document.body.appendChild(para);
-    }
+const body = document.body;
+const myButton = document.querySelector('#myButton');
+myButton.addEventListener('change', () => {
+  const para = document.createElement('p');
+  para.textContent = myButton.value;
+  body.appendChild(para);
+});
 
-    const buttons = document.querySelectorAll('button');
+const btn = document.querySelector('button');
 
-    for (const button of buttons) {
-      button.addEventListener('click', createParagraph);
-    }
+function random(number) {
+  return Math.floor(Math.random() * (number + 1));
+}
+
+btn.addEventListener('click', () => {
+  const light = random(100);
+  const rndCol = `hsl(${random(360)}, ${random(100)}%, ${light}%)`;
+  if (light <= 50) {
+    document.body.style.color = 'hsl(0,0%,100%)';
+  } else {
+    document.body.style.color = 'hsl(0,0%,0%)';
   }
-);
+  document.body.style.backgroundColor = rndCol;
+});

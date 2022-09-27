@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Events: Task 2</title>
+  <style>
+    p {
+      color: purple;
+      margin: 0.5em 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+  <section class="preview">
+  </section>
+
+  <canvas width="480" height="320" tabindex="0">
+
+  </canvas>
+
+  <script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawCircle(x, y, size) {
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height); //apaga tudo e reescreve...
+
+      ctx.beginPath();
+      ctx.fillStyle = 'black';
+      ctx.arc(x % canvas.width, y % canvas.height, size, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    let x = 50; // memory
+    let y = 50;
+    const size = 30;
+
+    drawCircle(x, y, size);
+
+    // Add your code here
+
+    document.body.addEventListener('keydown', (e) => {
+      switch (e.key) {
+        case 'a':
+          drawCircle(x - 5, y, size);
+          x -= 5;
+          break;
+        case 'd':
+          drawCircle(x + 5, y, size);
+          x += 5;
+          break;
+        case 'w':
+          drawCircle(x, y - 5, size);
+          y -= 5;
+          break;
+        case 's':
+          drawCircle(x, y + 5, size);
+          y += 5;
+          break;
+        default:
+          console.log('nothing happened');
+      }
+    })
+
+  </script>
+</body>
+
+</html>

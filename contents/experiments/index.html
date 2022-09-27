@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Modular HTML</title>
+
+  <style>
+    html {
+      font-family: sans-serif;
+      background-color: rgb(26, 26, 26);
+      color: white;
+    }
+
+    body {
+      width: 50%;
+      max-width: 800px;
+      min-width: 480px;
+      margin: 0 auto;
+    }
+
+    .form input[type="number"] {
+      width: 200px;
+    }
+
+    .lastResult {
+      color: white;
+      padding: 3px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .nav-links li {
+      border: 2px white dashed;
+      padding: 10px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+    }
+  </style>
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Modular HTML? It is possible?</h1>
+  </header>
+  <main>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><input type="button" value="Page #1" class="pageButton"></li>
+        <li><a href="#">Page #2</a></li>
+      </ul>
+    </nav>
+    <article class="article">
+      <div id="insert">
+        <h2>Home Page</h2>
+        <p>Click on either of the navigation buttons above to load the contents of the other pages.</p>
+      </div>
+    </article>
+  </main>
+</body>
