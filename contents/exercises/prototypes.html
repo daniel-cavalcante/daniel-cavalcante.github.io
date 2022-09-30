@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 1</title>
+    <style>
+      html {
+        font-size: 10px;
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="../styles.css" /> -->
+  </head>
+
+  <body>
+    <h1>Understanding prototypes using dogs and, more generally, canines.</h1>
+  </body>
+  <script>
+    // A canine species can be 'wolf', 'dog', 'coyote' or 'golden jackal'.
+    function Canine(species) {
+      this.species = species,
+        this.cry = function () {
+          const species = this.species;
+          // It seems one could remove the above line, but one can't.
+          // If fact, if one removes it, the cry() does not work as intended if one sets a different species
+          // using the setSpecies method added below.
+          switch (species) {
+            case 'wolf':
+              return 'howls';
+              break;
+            case 'dog':
+              return 'barks';
+              break;
+            default:
+              return 'coyote or golden jackal cry?';
+          }
+        }
+    }
+
+    // This setter does not work as intended if the line 24 is removed.
+    Canine.prototype.setSpecies = function (species) {
+      this.species = species;
+    }
+
+    Canine.prototype.getSpecies = function () {
+      return this.species;
+    }
+
+    function Dog(breed, color) {
+      // Constructor function for Dog.
+      this.breed = breed,
+        this.color = color
+    }
+
+    // Sets the prototype of Dog to that of Canine('dog'), so Dog inherits all Canine properties and methods.
+    Dog.prototype = new Canine('dog');
+
+    Dog.prototype.setAge = function (age) {
+      this.age = age;
+    }
+
+    Dog.prototype.getAge = function () {
+      return this.age;
+    }
+
+    // Examples.
+    const myDog = new Dog('vira-lata', 'caramelo');
+    const myCanine = new Canine('wolf');
+  </script>
+
+</html>
