@@ -7,8 +7,15 @@
     <style>
       html {
         font-size: 10px;
-        background-color: black;
-        color: white;
+      }
+
+      body {
+        font-size: 1.6rem;
+      }
+
+      figcaption {
+        font-size: 1.4rem;
+        font-style: italic;
       }
     </style>
     <!-- <link rel="stylesheet" href="../styles.css" /> -->
@@ -16,27 +23,37 @@
 
   <body>
     <h1>Understanding prototypes using dogs and, more generally, canines.</h1>
+    <p>Check the <em>&lang;script&rang;</em> element inside the <code>index.html</code>. Click <a
+        href="https://stackoverflow.com/a/4778408/20115954">here</a> to see a nice explanation. Also, see the
+      image below for a nice visual representation of the prototype chain.</p>
+    <figure>
+      <img src="proto.png">
+      <figcaption>
+        <p>This figure was taken from <a href="dmitrysoshnikov.com/ecmascript/javascript-the-core/"
+            target="_blank">here</a>.</p>
+      </figcaption>
+    </figure>
   </body>
   <script>
     // A canine species can be 'wolf', 'dog', 'coyote' or 'golden jackal'.
     function Canine(species) {
-      this.species = species,
-        this.cry = function () {
-          const species = this.species;
-          // It seems one could remove the above line, but one can't.
-          // If fact, if one removes it, the cry() does not work as intended if one sets a different species
-          // using the setSpecies method added below.
-          switch (species) {
-            case 'wolf':
-              return 'howls';
-              break;
-            case 'dog':
-              return 'barks';
-              break;
-            default:
-              return 'coyote or golden jackal cry?';
-          }
+      this.species = species;
+      this.cry = function () {
+        const species = this.species;
+        // It seems one could remove the above line, but one can't.
+        // If fact, if one removes it, the cry() does not work as intended if one sets a different species
+        // using the setSpecies method added below.
+        switch (species) {
+          case 'wolf':
+            return 'howls';
+            break;
+          case 'dog':
+            return 'barks';
+            break;
+          default:
+            return 'coyote or golden jackal cry?';
         }
+      }
     }
 
     // This setter does not work as intended if the line 24 is removed.
@@ -50,8 +67,8 @@
 
     function Dog(breed, color) {
       // Constructor function for Dog.
-      this.breed = breed,
-        this.color = color
+      this.breed = breed;
+      this.color = color
     }
 
     // Sets the prototype of Dog to that of Canine('dog'), so Dog inherits all Canine properties and methods.
@@ -68,6 +85,10 @@
     // Examples.
     const myDog = new Dog('vira-lata', 'caramelo');
     const myCanine = new Canine('wolf');
+
+    const caninePrototype = {
+
+    }
   </script>
 
 </html>
